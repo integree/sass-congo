@@ -1,0 +1,9 @@
+{
+  "name": "sass-congo",
+  "version": "1.0.0",
+  "homepage": "https://github.com/integree/sass-congo/",
+  "description": "Sass-congo's code isn't our property. Sass-congo has been made for our project need using others packages.",
+  "dependencies": {
+    "jquery": "1.9.1 - 3"
+  }
+}
