@@ -34,7 +34,7 @@
       &:hover,
       &:focus {
         color: inherit;
-        background-color: $mdb-tes;
+        background-color: $mdb-navbar-default-link-hover-bg;
       }
     }
     > .active > a {
@@ -42,7 +42,7 @@
       &:hover,
       &:focus {
         color: inherit;
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: $mdb-navbar-default-link-active-bg;
       }
     }
     > .disabled > a {
