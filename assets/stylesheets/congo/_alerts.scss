@@ -1,0 +1,136 @@
+// Alert
+
+.alert {
+  @include box-shadow($cng-box-shadow);
+  position: relative;
+  
+  .alert-icon {
+    height: 100%;
+    
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    margin-top: -18px;
+    text-align: center;
+    width: 45px;
+    
+    i {
+      font-size: 36px;
+    }
+  }
+  
+  .alert-body {
+    margin-left: 45px;
+    
+    a {
+      cursor: pointer;
+      font-weight: bold;
+      color: inherit;
+    }
+    
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .alert-lg {
+    &.alert {
+      padding: 50px $cng-alert-padding;
+    }
+    
+    .alert-icon {
+      margin-top: -36px;
+      width: 120px;
+      
+      i {
+        font-size: 72px;
+      }
+    }
+    
+    .alert-body {
+      margin-left: 120px;
+    }
+  }
+}
+
+.alert-inverted {
+  &.alert-success {
+    @include alert-variant($cng-alert-success-background, $cng-alert-success-border, $cng-alert-success-text-color);
+  }
+  
+  &.alert-info {
+    @include alert-variant($cng-alert-info-background, $cng-alert-info-border, $cng-alert-info-text-color);
+  }
+  
+  &.alert-warning {
+    @include alert-variant($cng-alert-warning-background, $cng-alert-warning-border, $cng-alert-warning-text-color);
+  }
+  
+  &.alert-danger {
+    @include alert-variant($cng-alert-danger-background, $cng-alert-danger-border, $cng-alert-danger-text-color);
+  }
+  
+  .alert-icon i {
+    color: $white !important;
+  }
+}
+
+// Notification
+
+.notifications {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 450px;
+  
+  @media (max-width: $screen-sm-max) {
+    width: 100% !important;
+  }
+  
+  display: block;
+  z-index: 1035;
+  
+  .alert {
+    @media (max-width: $screen-sm-max) {
+      margin: 20px;
+    }
+    margin: 20px 75px 20px 20px;
+
+    .alert-progress {
+      margin: 15px -15px -15px -15px;
+      .alert-progressbar {
+        height: 3px;
+        width: 0;
+      }
+    }
+    
+    &.alert-success {
+      .alert-progressbar {
+        background-color: $cng-notification-progressbar-success-bg;
+      }
+    }
+    &.alert-info {
+      .alert-progressbar {
+        background-color: $cng-notification-progressbar-info-bg;
+      }
+    }
+    &.alert-warning {
+      .alert-progressbar {
+        background-color: $cng-notification-progressbar-warning-bg;
+      }
+    }
+    &.alert-danger {
+      .alert-progressbar {
+        background-color: $cng-notification-progressbar-danger-bg;
+      }
+    }
+    
+  }  
+}
+
+// Alerts in modal
+// Alert in panel
+
+.modal-iframe .alert, .panel .alert {
+  box-shadow: none !important;
+}
+

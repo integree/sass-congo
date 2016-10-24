@@ -35,6 +35,7 @@
       &:focus {
         color: inherit;
         background-color: $mdb-navbar-default-link-hover-bg;
+        border: solid;
       }
     }
     > .active > a {
