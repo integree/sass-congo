@@ -1,7 +1,4 @@
-// borrowed from: https://github.com/FezVrasta/bootstrap-material-design/blob/master/sass/_mixins.scss
-// Copyright (c) 2015-2016, Federico Zivolo
-// Complies with license: https://github.com/FezVrasta/bootstrap-material-design/blob/master/LICENSE.md
-
+// This file is NOT automatically converted and must be manually merged
 @import "mixins-utilities";
 
 // Placeholder text
@@ -13,8 +10,8 @@
 
 
 // variations(unquote(""), background-color, #FFF);
-@mixin variations($component, $selector-suffix, $cng-param-1, $color-default) {
-  @include generic-variations($component, $selector-suffix, $color-default, "variations-content", $cng-param-1);
+@mixin variations($component, $selector-suffix, $mdb-param-1, $color-default) {
+  @include generic-variations($component, $selector-suffix, $color-default, "variations-content", $mdb-param-1);
 }
 
 @mixin variations-content($args) {
@@ -30,8 +27,8 @@
 
 @mixin background-variations-content($args) {
   background-color: map-get($args, variation-color);
-  @if (map-get($args, variation-color) == $cng-btn-background-color) {
-    color: $cng-text-color-primary;
+  @if (map-get($args, variation-color) == $mdb-btn-background-color) {
+    color: $mdb-text-color-primary;
   } @else {
     color: map-get($args, variation-color-text);
   }
@@ -52,14 +49,14 @@
 @mixin button-variations-content($args) {
   //@debug "#{inspect($args)}";
   $variation-color: map-get($args, variation-color);
-  $cng-param-1: map-get($args, material-param-1);
+  $mdb-param-1: map-get($args, material-param-1);
   background-color: contrast-color($variation-color,
-          darken($variation-color, $cng-param-1),
-          lighten($variation-color, $cng-param-1));
+          darken($variation-color, $mdb-param-1),
+          lighten($variation-color, $mdb-param-1));
 }
 
-//@mixin bg-color-variations($component, $selector-suffix, $color-default, $cng-param-1) {
-//  @include generic-variations($component, $selector-suffix, $color-default, "bg-color-variations-content", $cng-param-1);
+//@mixin bg-color-variations($component, $selector-suffix, $color-default, $mdb-param-1) {
+//  @include generic-variations($component, $selector-suffix, $color-default, "bg-color-variations-content", $mdb-param-1);
 //}
 //
 //@mixin bg-color-variations-content($args) {
@@ -84,7 +81,7 @@
 //@mixin bg-img-variations-content($args){
 //  $variation-color: map-get($args, variation-color);
 //  //@debug "bg-img-variations-content called for #{map-get($args, extra)} #{map-get($args, default)} #{map-get($args, variation-color-name)} #{map-get($args, variation-color)}"; //#{inspect($args)}";
-//  background-image: linear-gradient($variation-color, $variation-color), linear-gradient($cng-input-underline-color, $cng-input-underline-color);
+//  background-image: linear-gradient($variation-color, $variation-color), linear-gradient($mdb-input-underline-color, $mdb-input-underline-color);
 //}
 
 // navbar-variations(" label input[type=checkbox]:checked + .toggle:active:after", $brand-primary
@@ -108,7 +105,7 @@
   .dropdown-menu {
     border-radius: $border-radius-base;
     li > a {
-      font-size: $cng-dropdown-font-size;
+      font-size: $mdb-dropdown-font-size;
       padding: 13px 16px;
       &:hover,
       &:focus {
@@ -180,14 +177,14 @@
 // $variation-color-text ---> rgba(255,255,255,0.84), rgba(0,0,0,0.84), rgba(255,255,255,0.84) ...
 //
 
-@mixin generic-variations($component, $selector-suffix, $color-default, $mixin-name, $cng-param-1) {
+@mixin generic-variations($component, $selector-suffix, $color-default, $mixin-name, $mdb-param-1) {
 
   //setup map to pass parameters (instead of the incredibly long-error-prone list for each and every @include)
   $args: (
           //extra: $selector-suffix,
           //default: $color-default,
           mixin-name: $mixin-name,
-          material-param-1: $cng-param-1
+          material-param-1: $mdb-param-1
   );
 
   // bootstrap styles
@@ -196,49 +193,49 @@
 
     $args-extra: map-merge($args, (
             variation-color: $color-default,
-            variation-color-text: $cng-text-color-light
+            variation-color-text: $mdb-text-color-light
     ));
     @include call-variations-content-mixin($args-extra);
   }
   &#{$component}-inverse#{$selector-suffix} {
     $args-inverse: map-merge($args, (
-            variation-color: $cng-brand-inverse,
-            variation-color-text: contrast-color($cng-brand-inverse, $cng-text-color-primary-hex, $cng-text-color-light-hex)
+            variation-color: $mdb-brand-inverse,
+            variation-color-text: contrast-color($mdb-brand-inverse, $mdb-text-color-primary-hex, $mdb-text-color-light-hex)
     ));
     @include call-variations-content-mixin($args-inverse);
   }
   &#{$component}-primary#{$selector-suffix} {
     $args-primary: map-merge($args, (
             variation-color: $brand-primary,
-            variation-color-text: $cng-text-color-light
+            variation-color-text: $mdb-text-color-light
     ));
     @include call-variations-content-mixin($args-primary);
   }
   &#{$component}-success#{$selector-suffix} {
     $args-success: map-merge($args, (
             variation-color: $brand-success,
-            variation-color-text: $cng-text-color-light
+            variation-color-text: $mdb-text-color-light
     ));
     @include call-variations-content-mixin($args-success);
   }
   &#{$component}-info#{$selector-suffix} {
     $args-info: map-merge($args, (
             variation-color: $brand-info,
-            variation-color-text: $cng-text-color-light
+            variation-color-text: $mdb-text-color-light
     ));
     @include call-variations-content-mixin($args-info);
   }
   &#{$component}-warning#{$selector-suffix} {
     $args-warning: map-merge($args, (
             variation-color: $brand-warning,
-            variation-color-text: $cng-text-color-light
+            variation-color-text: $mdb-text-color-light
     ));
     @include call-variations-content-mixin($args-warning);
   }
   &#{$component}-danger#{$selector-suffix} {
     $args-danger: map-merge($args, (
             variation-color: $brand-danger,
-            variation-color-text: $cng-text-color-light
+            variation-color-text: $mdb-text-color-light
     ));
     @include call-variations-content-mixin($args-danger);
   }
