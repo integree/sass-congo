@@ -69,6 +69,12 @@
     &.is-focused .form-control {
       background-image: linear-gradient($color, $color), linear-gradient($cng-input-underline-color, $cng-input-underline-color);
     }
+    &.has-error {
+      .message-block {
+        color: $color;
+        display: block;
+      }
+    }
     label.control-label,
     .help-block {
       color: $color;
@@ -214,6 +220,11 @@
     position: absolute; // do not use position: absolute because width/wrapping isn't automatic and overflows occur
     display: none;
   }
+  
+  // Message blocks
+  .message-block {
+    display: none;
+  }
 
   // form-group is-focused display
   &.is-focused {
@@ -228,7 +239,8 @@
         background-color: $brand-primary;
       }
     }
-
+    
+    
     //.variations(unquote(".is-focused label.control-label"), color, $brand-primary); // focused label color variations
     label,
     label.control-label {
@@ -246,6 +258,7 @@
     .help-block {
       display: block;
     }
+    
   }
 
   @include form-group-validation-state(has-warning, $brand-warning);
