@@ -148,3 +148,10 @@ $cng-checkbox-border-color:             $cng-label-color-toggle-focus !default;
 $cng-radio-label-color:                 $cng-label-color !default;
 $cng-radio-color-off:                   $cng-label-color-toggle-focus !default;
 $cng-radio-color-on:                    $brand-primary !default;
+
+// Tabs
+
+$cng-nav-tabs-bg:                       $grey-50;
+$cng-nav-tabs-color:                    $grey-600;
+$cng-nav-tabs-color-hover:              $grey-700;
+$cng-navb-tabs-active-color:            $teal-500;
