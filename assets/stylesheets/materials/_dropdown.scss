@@ -71,10 +71,9 @@
   }
   
   &::after {
-
-    color: #757575;
-    content: "//";
-    font-family: "Material Icons";
+    color: $cng-dropdown-caret-color;
+    content: $cng-dropdown-caret-content;
+    font-family: $cng-dropdown-caret-font-family;
     font-size: 25px;
     font-style: normal;
     font-weight: 400;
@@ -82,14 +81,6 @@
     position: absolute;
     right: 5px;
     top: 3px;    
-    // border-left: 4px solid transparent;
-    // border-right: 4px solid transparent;
-    // border-top: 4px dashed;
-    // display: inline-block;
-    // height: 0;
-    // margin-left: 2px;
-    // vertical-align: middle;
-    // width: 0;
   }
 
 }

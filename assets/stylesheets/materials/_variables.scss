@@ -129,7 +129,10 @@ $cng-popover-color:                     #ececec !default;
 $cng-dropdown-font-size:                16px !default;
 $cng-dropdown-bg:                       $dropdown-bg !default;
 $cng-dropdown-z-index:                  10000 !default;  
-$cng-dropdown-link-hover-bg:            $dropdown-link-hover-bg;
+$cng-dropdown-link-hover-bg:            $dropdown-link-hover-bg !default;
+$cng-dropdown-caret-color:              $grey-600 !default;
+$cng-dropdown-caret-content:            "arrow_drop_down" !default;
+$cng-dropdown-caret-font-family:        "Material Icons" !default;
 
 // Toggle:
 
