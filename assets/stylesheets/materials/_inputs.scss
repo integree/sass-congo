@@ -74,6 +74,9 @@
         color: $color;
         display: block;
       }
+      .help-block {
+        display: none;
+      }
     }
     label.control-label,
     .help-block {
