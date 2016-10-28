@@ -74,6 +74,17 @@
   }
 }
 
+.alert.alert-fluid {
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  margin: 0;
+  .container {
+    position: relative;
+  }    
+}
+
+
 // Notification
 
 .notifications {
