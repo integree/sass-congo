@@ -401,5 +401,9 @@
       $.error("Method " + params + " does not exists on jQuery.dropdown");
     }
   };
-
+  
+  $(document).ready(function(){
+    $("select").dropdown({ "autoinit" : "select" });
+  });
+  
 }));

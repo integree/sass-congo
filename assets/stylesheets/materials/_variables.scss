@@ -127,6 +127,9 @@ $cng-popover-color:                     #ececec !default;
 // Dropdown Menu:
 
 $cng-dropdown-font-size:                16px !default;
+$cng-dropdown-bg:                       $dropdown-bg !default;
+$cng-dropdown-z-index:                  10000 !default;  
+$cng-dropdown-link-hover-bg:            $dropdown-link-hover-bg;
 
 // Toggle:
 
