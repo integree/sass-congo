@@ -2,8 +2,6 @@
 // Copyright (c) 2015-2016, Federico Zivolo
 // Complies with license: https://github.com/FezVrasta/bootstrap-material-design/blob/master/LICENSE.md
 
-// test
-
 (function (factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
