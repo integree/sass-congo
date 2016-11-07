@@ -46,6 +46,7 @@
 .help-block {
   color: $cng-help-block-color;
   transition-duration: 1s;
+  position: relative !important;
 }
 
 // overide labels colors
