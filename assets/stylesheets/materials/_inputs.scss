@@ -11,6 +11,14 @@
   padding: .3em .6em; // Make top & bottom .label padding the same: https://github.com/twbs/bootstrap/pull/19631
 }
 
+// label requierd
+.field-requierd {
+  label:after {
+    content: '*';
+    color: $brand-danger;
+  }
+}
+
 // must be broken out for reuse - webkit selector breaks firefox
 @mixin label-static($label-top, $static-font-size, $static-line-height){
   label.control-label {
@@ -66,22 +74,26 @@
     .form-control {
       box-shadow: none;
     }
+    
     &.is-focused .form-control {
       background-image: linear-gradient($color, $color), linear-gradient($cng-input-underline-color, $cng-input-underline-color);
     }
+    
     &.has-error {
       .message-block {
         color: $color;
         display: block;
-      }
-      .help-block {
-        display: none;
+        margin-bottom: 0;
       }
     }
-    label.control-label,
-    .help-block {
+    
+    label.control-label {
       color: $color;
     }
+    .help-block {
+      color: $cng-help-block-color;
+    }
+    
   }
 }
 
@@ -222,6 +234,14 @@
   .help-block {
     position: absolute; // do not use position: absolute because width/wrapping isn't automatic and overflows occur
     display: none;
+    
+  }
+  //  Help blocks - display help-block below checkboxes.
+  .checkbox {
+    .help-block {
+      font-size: $font-size-base;
+      display: block;
+    }
   }
   
   // Message blocks

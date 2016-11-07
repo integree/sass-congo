@@ -60,6 +60,7 @@ $cng-input-placeholder-color:           #BDBDBD !default;
 $cng-input-underline-color:             #D2D2D2 !default;
 $cng-label-static-size-ratio:           75 / 100 !default;
 $cng-help-block-size-ratio:             75 / 100 !default;
+$cng-help-block-color:                  lighten($text-color, 25%) !default; // Same as bootstrap
 
 $cng-input-font-size-base:              16px !default;
 $cng-input-font-size-large:             ceil(($font-size-base * 1.25)) !default; // ~20px
