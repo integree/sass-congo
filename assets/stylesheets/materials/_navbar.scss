@@ -54,6 +54,19 @@
         opacity: 0.9;
       }
     }
+    
+    .btn {
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;    
+      min-width: 0;
+      padding: 8px;
+      &:hover,
+      &:focus {
+        background-color: $cng-navbar-default-link-hover-bg;
+      }
+    }
+    
   }
 
   // Darken the responsive nav toggle
