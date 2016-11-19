@@ -126,7 +126,7 @@
     }
   }
   
-  .btn-icon i {
+  .btn, .btn-icon > i {
     color: $variation-color-text;
   }
 }
