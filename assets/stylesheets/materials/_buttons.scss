@@ -17,13 +17,12 @@
 }
 
 // mdb default buttons are flat by default
-// synchronized with mdl 11/23/15
 .btn,
 .input-group-btn .btn {
   border: none;
   border-radius: $border-radius-base;
   position: relative;
-  padding: 8px 30px;
+  padding: 8px 10px;
   margin: 10px 1px;
   @include typo-button();
   will-change: box-shadow, transform;
@@ -244,5 +243,15 @@
   .btn:active,
   .btn-group {
     margin: 0;
+  }
+}
+
+// buttons flat margins
+.btn:not(.btn-raised) {
+  .text-right &, &.btn-fit-right {
+     margin-right: -10px;
+  }
+  .text-left &, &.btn-fit-left {
+     margin-left: -10px;
   }
 }
