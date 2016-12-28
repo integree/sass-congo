@@ -1,10 +1,11 @@
 .dropdownjs {
   position: relative;
   
-  input {
+  input, button {
     width: 100%;
     padding-right: 30px;
     text-overflow: ellipsis;
+    text-align: left;
     &[readonly] {
       cursor: pointer;
     }    

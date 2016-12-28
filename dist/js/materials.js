@@ -1923,7 +1923,8 @@ jQuery.Velocity ? console.log("Velocity is already loaded. You may be needlessly
 
       function initElement($select) {
         // Don't do anything if this is not a select or if this select was already initialized
-        if ($select.data("dropdownjs") || !$select.is("select")) {
+        // if ($select.data("dropdownjs") || !$select.is("select")) {
+        if ($select.data("dropdownjs")) {
           return;
         }
 
@@ -1939,11 +1940,11 @@ jQuery.Velocity ? console.log("Velocity is already loaded. You may be needlessly
         $dropdown.addClass("dropdownjs").addClass(options.dropdownClass);
         $dropdown.data("select", $select);
 
-        // Create the fake input used as "select" element and cache it as $input
-        var $input = $("<input type=text readonly class=fakeinput>");
-        if ($.material) { $input.data("mdproc", true); }
+        // Create the fake input used as "select" element and cache it as $button
+        var $button = $("<button class=fakeinput></button>");
+        if ($.material) { $button.data("mdproc", true); }
         // Append it to the dropdown wrapper
-        $dropdown.append($input);
+        $dropdown.append($button);
 
         // Create the UL that will be used as dropdown and cache it AS $ul
         var $ul = $("<ul></ul>");
@@ -1953,7 +1954,7 @@ jQuery.Velocity ? console.log("Velocity is already loaded. You may be needlessly
         $dropdown.append($ul);
 
         // Transfer the placeholder attribute
-        $input.attr("placeholder", $select.attr("placeholder"));
+        $button.attr("placeholder", $select.attr("placeholder"));
 
         // Loop trough options and transfer them to the dropdown menu
         $select.find("option").each(function() {
@@ -1970,8 +1971,6 @@ jQuery.Velocity ? console.log("Velocity is already loaded. You may be needlessly
           $dynamicInput.find("input").attr("placeholder", options.dynamicOptLabel);
           $ul.append($dynamicInput);
         }
-
-
 
         // Cache the dropdown options
         var selectOptions = $dropdown.find("li");
@@ -1999,8 +1998,8 @@ jQuery.Velocity ? console.log("Velocity is already loaded. You may be needlessly
             }
         }
 
-        // Transfer the classes of the select to the input dropdown
-        $input.addClass($select[0].className);
+        // Transfer the classes of the select to the button dropdown
+        $button.addClass($select[0].className);
 
         // Hide the old and ugly select
         $select.hide().attr("data-dropdownjs", true);
@@ -2026,7 +2025,7 @@ jQuery.Velocity ? console.log("Velocity is already loaded. You may be needlessly
         $ul.on("keydown", "li:not(.dropdownjs-add)", function(e) {
           if (e.which === 27) {
             $(".dropdownjs > ul > li").attr("tabindex", -1);
-            return $input.removeClass("focus").blur();
+            return $button.removeClass("focus").blur();
           }
           if (e.which === 32 && !$(e.target).is("input")) {
             methods._select($dropdown, $(this));
@@ -2038,7 +2037,7 @@ jQuery.Velocity ? console.log("Velocity is already loaded. You may be needlessly
           if ($select.is(":disabled")) {
             return;
           }
-          $input.addClass("focus");
+          $button.addClass("focus");
         });
 
         // Add new options when the widget is used
@@ -2102,13 +2101,13 @@ jQuery.Velocity ? console.log("Velocity is already loaded. You may be needlessly
         });
 
         // Used to make the dropdown menu more dropdown-ish
-        $input.on("click focus", function(e) {
+        $button.on("click focus", function(e) {
           e.stopPropagation();
           if ($select.is(":disabled")) {
             return;
           }
           $(".dropdownjs > ul > li").attr("tabindex", -1);
-          $(".dropdownjs > input").not($(this)).removeClass("focus").blur();
+          $(".dropdownjs > button").not($(this)).removeClass("focus").blur();
 
           $(".dropdownjs > ul > li").not(".dropdownjs-add").attr("tabindex", 0);
 
@@ -2122,7 +2121,7 @@ jQuery.Velocity ? console.log("Velocity is already loaded. You may be needlessly
 
           var height = coords.bottom;
 
-          // Decide if place the dropdown below or above the input
+          // Decide if place the dropdown below or above the button
           if (height < 200 && coords.top > coords.bottom) {
             height = coords.top;
             $ul.attr("placement", "top-left");
@@ -2144,7 +2143,7 @@ jQuery.Velocity ? console.log("Velocity is already loaded. You may be needlessly
 
           // Close opened dropdowns
           $(".dropdownjs > ul > li").attr("tabindex", -1);
-          $input.removeClass("focus");
+          $button.removeClass("focus");
         });
       }
 
@@ -2176,7 +2175,7 @@ jQuery.Velocity ? console.log("Velocity is already loaded. You may be needlessly
 
       // Get dropdown's elements
       var $select = $dropdown.data("select"),
-          $input  = $dropdown.find("input.fakeinput");
+          $button  = $dropdown.find("button.fakeinput");
       // Is it a multi select?
       var multi = $select.attr("multiple");
 
@@ -2192,14 +2191,14 @@ jQuery.Velocity ? console.log("Velocity is already loaded. You may be needlessly
           var $selected = $select.find("[value=\"" + $(this).attr("value") + "\"]");
           $selected.prop("selected", $(this).hasClass("selected"));
         });
-        // Add or remove the value from the input
+        // Add or remove the value from the button
         var text = [];
         selectOptions.each(function() {
           if ($(this).hasClass("selected")) {
             text.push($(this).text());
           }
         });
-        $input.val(text.join(", "));
+        $button.text(text.join(", "));
       }
 
       // Behavior for single select
@@ -2212,13 +2211,19 @@ jQuery.Velocity ? console.log("Velocity is already loaded. You may be needlessly
         $target.addClass("selected");
         // Set the value to the native select
         $select.val($target.attr("value"));
-        // Set the value to the input
-        $input.val($target.text().trim());
+        // Set the value to the button
+        if ($target.data('content')) {
+          $button.html($target.data('content'));
+        } else {
+          $button.text($target.text().trim());
+        }
+
       }
 
       // This is used only if Material Design for Bootstrap is selected
       if ($.material) {
-        if ($input.val().trim()) {
+        // if ($button.val().trim()) {
+        if ($button.attr('title')) {
           $select.removeClass("empty");
         } else {
           $select.addClass("empty");
@@ -2237,15 +2242,21 @@ jQuery.Velocity ? console.log("Velocity is already loaded. You may be needlessly
 
       // Style the option
       $option.addClass(this.options.optionClass);
-
+      
+      // If the option has data-content then show data-content as html
+      if ($this.data('content')) {
+        $option.html($this.data('content'));
+      }
+      
       // If the option has some text then transfer it
-      if ($this.text()) {
+      else if ($this.text()) {
         $option.text($this.text());
       }
       // Otherwise set the empty label and set it as an empty option
       else {
         $option.html("&nbsp;");
       }
+      
       // Set the value of the option
       $option.attr("value", $this.val());
 
