@@ -1,0 +1,13 @@
+$classesList: 
+  "h1" $cng-h1-color,
+  "h2" $cng-h2-color,
+  "h3" $cng-h3-color,
+  "h4" $cng-h4-color, 
+  "h5" $cng-h5-color,
+  "h6" $cng-h6-color;
+
+@each $i in $classesList {
+  #{nth($i,1)}, .#{nth($i,1)} {
+    color: #{nth($i,2)};
+  }
+}
