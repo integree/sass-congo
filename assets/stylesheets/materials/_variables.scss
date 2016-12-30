@@ -13,12 +13,12 @@ $icon-color:                            rgba(0,0,0,0.5) !default;
 $cng-label-color:                       unquote("rgba(#{$rgb-black}, 0.26)") !default;
 $cng-label-color-toggle-focus:          unquote("rgba(#{$rgb-black}, .54)") !default;
 
-$cng-h1-color:                          $primary-text-dark;
-$cng-h2-color:                          $secondary-text-dark;
-$cng-h3-color:                          $secondary-text-dark;
-$cng-h4-color:                          $secondary-text-dark;
-$cng-h5-color:                          $secondary-text-dark;
-$cng-h6-color:                          $secondary-text-dark;
+$cng-h1-color:                          $primary-text-light;
+$cng-h2-color:                          $secondary-text-light;
+$cng-h3-color:                          $secondary-text-light;
+$cng-h4-color:                          $secondary-text-light;
+$cng-h5-color:                          $secondary-text-light;
+$cng-h6-color:                          $secondary-text-light;
 
 // Alert
 
