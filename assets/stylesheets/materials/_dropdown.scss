@@ -1,8 +1,11 @@
 .dropdownjs {
   position: relative;
   
-  input, button {
+  button.form-control {
     width: 100%;
+  }
+
+  button {
     padding-right: 30px;
     text-overflow: ellipsis;
     text-align: left;
@@ -72,19 +75,33 @@
     }
   }
   
-  &::after {
+  // &.arrow-drop-down::after {
+    // color: $cng-dropdown-caret-color;
+    // content: $cng-dropdown-caret-content;
+    // font-family: $cng-dropdown-caret-font-family;
+    // font-size: 25px;
+    // font-style: normal;
+    // font-weight: 400;
+    // pointer-events: none;
+    // position: absolute;
+    // right: 5px;
+    // top: 3px;    
+  // }
+//   
+  button:after {
     color: $cng-dropdown-caret-color;
     content: $cng-dropdown-caret-content;
     font-family: $cng-dropdown-caret-font-family;
+    text-transform: lowercase;
     font-size: 25px;
     font-style: normal;
     font-weight: 400;
     pointer-events: none;
     position: absolute;
     right: 5px;
-    top: 3px;    
+    top: 0;          
   }
-
+  
 }
 
 select[data-dropdownjs][disabled] + .dropdownjs > input[readonly] {
