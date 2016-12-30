@@ -362,32 +362,42 @@ $blue-grey: $blue-grey-500 !default;
 $black: #000000; $rgb-black: "0,0,0" !default;
 $white: #ffffff; $rgb-white: "255,255,255" !default;
 
+$primary-text-dark:         $white;
+$secondary-text-dark:       rgba(255,255,255,0.7);
+$hint-text-dark:            rgba(255,255,255,0.5);
+$divider-dark:              rgba(255,255,255,0.12);
+
+$primary-text-light:        $black;
+$secondary-text-light:      rgba(0,0,0,0.7);
+$hint-text-light:           rgba(0,0,0,0.5);
+$divider-light:             rgba(0,0,0,0.12);
+
 // Classes
 
 .primary-text-dark {
-  color: $white !important;
+  color: $primary-text-dark !important;
 }
 .secondary-text-dark {
-  color: rgba(255,255,255,0.7) !important;
+  color: $secondary-text-dark !important;
 }
 .hint-text-dark {
-  color: rgba(255,255,255,0.5) !important;
+  color: $hint-text-dark !important;
 }
 .divider-dark {
-  color: rgba(255,255,255,0.12) !important;
+  color: $divider-dark !important;
 }
 
 .primary-text-light {
-  color: $black !important;
+  color: $primary-text-light !important;
 }
 .secondary-text-light {
-  color: rgba(0,0,0,0.7) !important;
+  color: $secondary-text-light !important;
 }
 .hint-text-light {
-  color: rgba(0,0,0,0.5) !important;
+  color: $hint-text-light !important;
 }
 .divider-light {
-  color: rgba(0,0,0,0.12) !important;
+  color: $divider-light !important;
 }
 
 .bg-red {
