@@ -1,14 +1,16 @@
 .dropdownjs {
   position: relative;
   
-  button.form-control {
-    width: 100%;
-  }
-
   button {
     padding-right: 30px;
     text-overflow: ellipsis;
     text-align: left;
+    &.form-control {
+      width: 100%;
+      &:after {
+        top: 3px;
+      }
+    }
     &[readonly] {
       cursor: pointer;
     }    
@@ -16,6 +18,19 @@
       -webkit-transform: scale(1);
       -ms-transform: scale(1);
       transform: scale(1);
+    }
+    &:after {
+      color: $cng-dropdown-caret-color;
+      content: $cng-dropdown-caret-content;
+      font-family: $cng-dropdown-caret-font-family;
+      text-transform: lowercase;
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 400;
+      pointer-events: none;
+      position: absolute;
+      right: 5px;
+      top: 0;          
     }
   }
   
@@ -73,33 +88,6 @@
         }
       }
     }
-  }
-  
-  // &.arrow-drop-down::after {
-    // color: $cng-dropdown-caret-color;
-    // content: $cng-dropdown-caret-content;
-    // font-family: $cng-dropdown-caret-font-family;
-    // font-size: 25px;
-    // font-style: normal;
-    // font-weight: 400;
-    // pointer-events: none;
-    // position: absolute;
-    // right: 5px;
-    // top: 3px;    
-  // }
-//   
-  button:after {
-    color: $cng-dropdown-caret-color;
-    content: $cng-dropdown-caret-content;
-    font-family: $cng-dropdown-caret-font-family;
-    text-transform: lowercase;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 400;
-    pointer-events: none;
-    position: absolute;
-    right: 5px;
-    top: 0;          
   }
   
 }
