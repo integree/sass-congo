@@ -1,6 +1,6 @@
 /*!
  * Sass-Congo v1.0.0 ()
- * Copyright 2016 Integree Business Solutions
+ * Copyright 2017 Integree Business Solutions
  */
 
 /*! ========================================================================
@@ -95,7 +95,7 @@
       "autofill": false,
 
       "withRipples": [
-        ".btn:not(.btn-link)",
+        ".btn:not(.btn-link):not(.btn-text)",
         ".card-image",
         ".navbar a:not(.withoutripple)",
         ".dropdown-menu a",

@@ -57,7 +57,23 @@
       }
     }
   }
+  
+  //--
+  // no margin
+  &.btn-no-margin {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
 
+  //--
+  // no margin
+  &.btn-text {
+    cursor: auto;
+    &:focus, &:hover {
+      background: none !important;
+    }
+  }  
+  
   //--
   // color variations
   &.btn-raised,
