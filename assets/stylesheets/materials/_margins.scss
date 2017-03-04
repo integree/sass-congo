@@ -4,14 +4,14 @@ $margins: '0' '3' '5' '10' '15' '25' '50';
 
 @each $margin in $margins {
   .margin-top-#{$margin} {
-    margin-top: #{$margin}px;
+    margin-top: #{$margin}px !important;
   }
   .margin-bottom-#{$margin} {
-    margin-bottom: #{$margin}px;
+    margin-bottom: #{$margin}px !important;
   }
   .margin-vertical-#{$margin} {
-    margin-top: #{$margin}px;
-    margin-bottom: #{$margin}px;
+    margin-top: #{$margin}px !important;
+    margin-bottom: #{$margin}px !important;
   }
 }
 
@@ -21,9 +21,9 @@ $margins: '0' '3' '5';
 
 @each $margin in $margins {
   .margin-left-#{$margin} {
-    margin-left: #{$margin}px;
+    margin-left: #{$margin}px !important;
   }
   .margin-right-#{$margin} {
-    margin-right: #{$margin}px;
+    margin-right: #{$margin}px !important;
   }
 }
