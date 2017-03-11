@@ -12,11 +12,11 @@
     
     .row-left {
       position: absolute;
-      // @FG troche nam to sieje bledami...
+      // @FG troche nam to sieje rozjazdami...
       // height: 100%;
+      // margin-top: -28px;
       width: 56px;
-      top: 50%;
-      margin-top: -28px;
+      top: unquote("calc(50% - 28px)");
       
       i, .letter, img {
         display: block;
