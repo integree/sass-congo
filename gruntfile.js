@@ -34,8 +34,8 @@ module.exports = function (grunt) {
           'assets/javascripts/materials/material.js',
           'assets/javascripts/materials/ripples.js',
           'assets/javascripts/materials/velocity.js',
-          
-          'assets/javascripts/materials/dropdown.js',
+
+          // 'assets/javascripts/materials/dropdown.js',
           'assets/javascripts/materials/letters.js',
           'assets/javascripts/materials/tabs.js',
         ],
