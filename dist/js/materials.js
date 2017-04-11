@@ -706,8 +706,9 @@
 /*! Note that this has been modified by Sass-Congo to confirm that Velocity is not already being imported. */
 
 // jQuery.Velocity ? console.log("Velocity is already loaded. You may be needlessly importing Velocity again; note that Materialize includes Velocity.") : (! function(e) {
-
-(! function(e) {
+// (! function(e) {
+  
+if (!jQuery.Velocity) (! function(e) {
     function t(e) {
         var t = e.length,
             a = r.type(e);
