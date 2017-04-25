@@ -5,3 +5,15 @@
 .no-background {
   background: none !important;  
 }
+
+.no-outline {
+  outline: none !important;
+}
+
+.no-focus:focus {
+  background: none !important;
+}
+
+.no-shadow {
+  box-shadow: none !important;
+}
